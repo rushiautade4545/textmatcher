@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text-Matcher</title>
+    <style>
+      .container {
+        width: 700px;
+        height: 400px;
+        background-color: rgb(241, 171, 218);
+        background-size: contain;
+        background-image: url(image.png);
+        background-position: 390%;
+        background-repeat: space;
+        border-radius: 60px 10px;
+       margin:100px auto ;
+       box-shadow: 0px 0px 20px 1px rgb(35, 36, 36);
+      }
+      .heading {
+        padding-top: 20px;
+        margin-left: 220px;
+        font-size: 45px;
+        color: rgb(17, 16, 16);
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .texts-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .input_text {
+        margin: 30px 20px;
+        width: 250px;
+        height: 90px;
+        border-radius: 30px 10px;
+        border: 1px solid rgb(242, 221, 236);
+        background-color: rgb(250, 211, 233);
+        box-shadow: 0px 0px 20px 1px rgb(35, 36, 36);
+        text-align: center;
+        font-size: 30px;
+        color: rgb(12, 12, 12);
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+     
+      
+      .match-result {
+        margin: 60px 150px;
+        font-size: 35px;
+        color: rgb(20, 20, 20);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+      }
+     
+    
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading"><u>Text Matcher</u></h1>
+      <div class="texts-container">
+        <input style="color: black;"
+          type="text"
+          class="input_text"
+          id="input1"
+          placeholder="EnterText "
+          onkeyup="compareText()"
+        />
+        <input
+          type="text"
+          class="input_text"
+          id="input2"
+          placeholder="EnterText"
+          onkeyup="compareText()"
+        />
+      </div>
+      <p class="match-result" id="match-result-text"></p>
+    </div>
+    <script>
+      function compareText() {
+        const input1element = document.getElementById("input1");
+        const input2element = document.getElementById("input2");
+        const resultElement = document.getElementById("match-result-text");
+        if (input1element.value == input2element.value) {
+          resultElement.innerText = "String Matched!";
+        } else {
+          resultElement.innerText = "String Not-Matched!";
+        }
+      }
+    </script>
+  </body>
+</html>
